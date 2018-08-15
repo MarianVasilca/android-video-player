@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Padding -->
+    <dimen name="padding_bottom_views">8dp</dimen>
+    <dimen name="padding_views">8dp</dimen>
+
+    <!-- Margins -->
+    <dimen name="margin_screen_edge">16dp</dimen>
+    <dimen name="margin_top_views">8dp</dimen>
+    <dimen name="margin_bottom_views">8dp</dimen>
+
+    <dimen name="volume_seek_bar_size">150dp</dimen>
+</resources>

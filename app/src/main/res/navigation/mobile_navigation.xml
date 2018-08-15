@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@+id/local_files">
+
+    <fragment
+        android:id="@+id/local_files"
+        android:name="marian.vasilca.videoplayer.ui.fragments.LocalFilesFragment"
+        android:label="@string/local_files_title"
+        tools:layout="@layout/fragment_local_files">
+
+        <action
+            android:id="@+id/video_player_action"
+            app:destination="@id/video_player"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/playlist"
+        android:name="marian.vasilca.videoplayer.ui.fragments.PlaylistFragment"
+        android:label="@string/playlist_title"
+        tools:layout="@layout/fragment_playlists">
+
+        <action
+            android:id="@+id/create_playlist_action"
+            app:destination="@id/create_playlist"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+        <action
+            android:id="@+id/video_player_action"
+            app:destination="@id/video_player"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            app:popEnterAnim="@android:anim/fade_in"
+            app:popExitAnim="@android:anim/fade_out" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/create_playlist"
+        android:name="marian.vasilca.videoplayer.ui.fragments.CreatePlaylistFragment"
+        android:label="@string/create_playlist_title"
+        tools:layout="@layout/fragment_local_files" />
+
+    <fragment
+        android:id="@+id/video_player"
+        android:name="marian.vasilca.videoplayer.ui.fragments.VideoPlayerFragment"
+        android:label="@string/video_player_title"
+        tools:layout="@layout/fragment_video_player" />
+
+</navigation>

@@ -1,0 +1,66 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    defaultConfig {
+        applicationId "marian.vasilca.videoplayer"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    androidExtensions {
+        // Parcelable data object made easier
+        experimental = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    // Kotlin
+    implementation deps.kotlin.stdlib
+    // Support
+    implementation deps.support.app_compat
+    implementation deps.support.design
+    implementation deps.support.recyclerview
+    implementation deps.support.recyclerview_selection
+    implementation deps.constraint_layout
+    // Navigation
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui
+    // Lifecycle
+    implementation deps.lifecycle.extensions
+    // room
+    implementation deps.room.runtime
+    implementation deps.room.rxjava2
+    kapt deps.room.compiler
+    // gson
+    implementation deps.retrofit.gson
+    // rx
+    implementation deps.rxjava2
+    implementation deps.rx_android
+    implementation deps.rx_kotlin
+    implementation deps.rx_cursor_loader
+
+    // Testing
+    testImplementation deps.junit
+    androidTestImplementation(deps.espresso.core)
+}

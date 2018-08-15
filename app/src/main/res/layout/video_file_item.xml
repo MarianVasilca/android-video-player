@@ -1,0 +1,46 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="videoFile"
+            type="marian.vasilca.videoplayer.data.model.VideoFile" />
+
+        <variable
+            name="videoItemDetail"
+            type="marian.vasilca.videoplayer.ui.adapters.videofiles.VideoFileDetail" />
+
+        <variable
+            name="position"
+            type="Integer" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/clVideoFile"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/item_background"
+        android:paddingStart="@dimen/margin_screen_edge"
+        android:paddingTop="@dimen/margin_top_views"
+        android:paddingEnd="@dimen/margin_screen_edge">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{videoFile.title}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvDateAdded"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>

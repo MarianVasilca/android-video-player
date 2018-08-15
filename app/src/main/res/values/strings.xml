@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Video Player</string>
+
+    <!--Titles-->
+    <string name="local_files_title">Files</string>
+    <string name="playlist_title">Playlist</string>
+    <string name="create_playlist_title">Create Playlist</string>
+    <string name="video_player_title">Video Player</string>
+
+    <!--General-->
+    <string name="cont">Continue</string>
+    <string name="cancel">Cancel</string>
+    <string name="empty" />
+    <string name="create">Create</string>
+    <string name="delete">Delete</string>
+    <string name="clear_selection">Clear Selection</string>
+
+    <!--Local Files Fragment-->
+    <string name="read_permission_title">Read Local Files Permission</string>
+    <string name="read_permission_text">We want to provide you the best user experience that\'s why we are asking to read your local files.
+        This is helping us to give you a list of all the videos on your device.
+        \n\nThe step where you have the option to deny or accept this permission comes after clicking Continue</string>
+
+    <!-- Playlist Fragment -->
+    <plurals name="video_plurals">
+        <item quantity="one">One video</item>
+        <item quantity="other">%d videos</item>
+    </plurals>
+
+    <!--Create Playlist Fragment-->
+    <string name="create_playlist">Create Playlist</string>
+    <string name="playlist_name">Playlist name</string>
+    <string name="error_no_selection_tracker">Something went wrong. Cannot Create playlist</string>
+    <string name="error_no_item_selected">No item selected. Please select at least one file</string>
+    <string name="error_no_title">Please enter a title</string>
+
+</resources>

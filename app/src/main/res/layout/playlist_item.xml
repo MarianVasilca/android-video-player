@@ -1,0 +1,51 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="playlist"
+            type="marian.vasilca.videoplayer.data.model.Playlist" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/vBackground"
+            layout="@layout/background_delete_cell" />
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/clForeground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/colorBackground"
+            android:paddingStart="@dimen/margin_screen_edge"
+            android:paddingTop="@dimen/margin_top_views"
+            android:paddingEnd="@dimen/margin_screen_edge">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{playlist.title}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvVideosNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{@plurals/video_plurals(playlist.files.size(), playlist.files.size())}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
+
+
+</layout>
