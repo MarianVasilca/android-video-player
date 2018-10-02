@@ -47,13 +47,15 @@ class CreatePlaylistFragment : LocalFilesFragment(),
     }
 
     override fun onCreateSelectionTracker(videoFiles: ArrayList<VideoFile>) {
-        selectionTracker = SelectionTracker.Builder<VideoFile>(
-                SELECTION_TRACKER_ID,
-                rvLocalFiles,
-                VideoFileKeyProvider(ItemKeyProvider.SCOPE_CACHED, videoFiles),
-                VideoFileDetailLookup(rvLocalFiles),
-                StorageStrategy.createParcelableStorage(VideoFile::class.java)
-        ).build()
+        selectionTracker =
+                SelectionTracker.Builder<VideoFile>(
+                        SELECTION_TRACKER_ID,
+                        rvLocalFiles,
+                        VideoFileKeyProvider(ItemKeyProvider.SCOPE_CACHED, videoFiles),
+                        VideoFileDetailLookup(rvLocalFiles),
+                        StorageStrategy.createParcelableStorage(VideoFile::class.java)
+                )
+                        .build()
 
         adapter.setSelectionTracker(selectionTracker)
     }
